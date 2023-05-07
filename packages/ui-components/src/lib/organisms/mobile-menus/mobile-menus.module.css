@@ -1,0 +1,26 @@
+.menu {
+  margin-top: 24px;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.menu li {
+  transition: opacity 300ms ease, width 300ms ease, border-color 300ms ease;
+  white-space: nowrap;
+  opacity: 0;
+  width: 0px;
+}
+
+.menuRendered {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.menuRendered li {
+  @apply w-full border-gray-200 dark:border-gray-600;
+  transform: translateX(0);
+  opacity: 1;
+}

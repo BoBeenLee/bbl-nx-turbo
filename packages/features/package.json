@@ -1,0 +1,45 @@
+{
+  "name": "@bbl-turbo/features",
+  "version": "0.0.1",
+  "repository": "https://github.com/vercel/examples.git",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "TIMING=1 eslint \"**/*.{ts,tsx,js,jsx}\" --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .turbo"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*",
+        "src/*/index"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "next": "*",
+    "react": "^17.0.0 || ^18.0.0-0",
+    "react-dom": "^17.0.0 || ^18.0.0-0"
+  },
+  "dependencies": {
+    "@bbl-turbo/utils": "*",
+    "@bbl-turbo/ui-components": "*",
+    "@bbl-turbo/constants": "*",
+    "classnames": "^2.3.1",
+    "axios": "1.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "latest",
+    "eslint": "^8.11.0",
+    "typescript": "4.9.5"
+  }
+}
