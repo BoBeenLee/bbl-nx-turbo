@@ -11,6 +11,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bbl-turbo/libs": "*",
+    "@bbl-turbo/ui-components": "*",
     "@vercel/examples-ui": "^1.0.4",
     "next": "canary",
     "react": "latest",

@@ -1,11 +1,18 @@
-const ui = require('@bbl-turbo/ui-components/tailwind')
+const { join } = require('path');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require('@vercel/examples-ui/tailwind'), ui],
-  // `ui.content` includes a path to the components that are using tailwind in @acme/ui
-  content: ui.content.concat([
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
-    './node_modules/@vercel/examples-ui/**/*.js',
-  ]),
-}
+  presets: [require('../../tailwind-workspace-preset.js')],
+  content: [
+    join(
+      __dirname,
+      '{app,src,pages,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+    ),
+    'libs/**/*!(*.stories|*.spec).{tsx,jsx,js,html}',
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
