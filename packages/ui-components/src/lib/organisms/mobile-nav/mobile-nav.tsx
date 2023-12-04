@@ -1,6 +1,8 @@
-import { useCallback, useEffect, useState } from 'react';
-import { MenuButton } from '../../molecules/menu-button/menu-button';
-import MobileMenus from '../mobile-menus/mobile-menus';
+"use client";
+
+import { useCallback, useEffect, useState } from "react";
+import { MenuButton } from "../../molecules/menu-button/menu-button";
+import MobileMenus from "../mobile-menus/mobile-menus";
 
 export function MobileNav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,16 +10,16 @@ export function MobileNav() {
   const onToggleMenu = useCallback(() => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     } else {
       setIsMenuOpen(true);
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     }
   }, [isMenuOpen]);
 
   useEffect(() => {
     return function cleanup() {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, []);
 

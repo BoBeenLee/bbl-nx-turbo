@@ -1,4 +1,6 @@
-import { Component } from 'react';
+"use client";
+
+import { Component } from "react";
 
 export interface ErrorBoundaryProps {
   children: React.ReactNode;

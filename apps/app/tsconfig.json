@@ -16,11 +16,21 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@lib/*": ["lib/*"],
-      "@components": ["components/index"],
-      "@components/*": ["components/*"]
-    }
+      "@bbl-turbo/apis": ["../../packages/apis/src/index.ts"],
+      "@bbl-turbo/constants": ["../../packages/constants/src/index.ts"],
+      "@bbl-turbo/features/*": ["../../packages/features/src/lib/*"],
+      "@bbl-turbo/hooks": ["../../packages/hooks/src/index.ts"],
+      "@bbl-turbo/images": ["../../packages/images/src/index.ts"],
+      "@bbl-turbo/libs": ["../../packages/libs/src/index.ts"],
+      "@bbl-turbo/ui-components/*": ["../../packages/ui-components/src/lib/*"],
+      "@bbl-turbo/utils": ["../../packages/utils/src/index.ts"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
