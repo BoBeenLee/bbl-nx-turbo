@@ -11,28 +11,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bbl-turbo/apis": "*",
     "@bbl-turbo/constants": "*",
     "@bbl-turbo/features": "*",
-    "@bbl-turbo/utils": "*",
     "@bbl-turbo/libs": "*",
     "@bbl-turbo/ui-components": "*",
-    "@bbl-turbo/apis": "*",
+    "@bbl-turbo/utils": "*",
+    "@vercel/analytics": "^1.0.1",
     "next": "13.3.0",
     "next-images": "1.8.4",
     "next-pwa": "5.6.0",
     "next-themes": "^0.2.1",
     "react": "latest",
-    "react-dom": "latest",
-    "@vercel/analytics": "^1.0.1"
+    "react-dom": "latest"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
     "@types/node": "^18.0.0",
     "@types/react": "latest",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "eslint": "^8.11.0",
     "eslint-config-next": "canary",
-    "postcss": "^8.4.18",
-    "tailwindcss": "^3.2.1",
+    "postcss": "^8.4.19",
+    "tailwindcss": "3.2.7",
     "typescript": "4.9.5"
   }
 }
