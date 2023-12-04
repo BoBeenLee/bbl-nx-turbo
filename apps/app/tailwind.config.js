@@ -8,7 +8,7 @@ module.exports = {
       __dirname,
       '{app,src,pages,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'
     ),
-    'libs/**/*!(*.stories|*.spec).{tsx,jsx,js,html}',
+    '../../packages/**/*!(*.stories|*.spec).{tsx,jsx,js,html}',
   ],
   darkMode: 'class',
   theme: {
