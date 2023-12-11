@@ -1,59 +1,108 @@
----
-name: Monorepo with Turborepo
-slug: monorepo-turborepo
-description: Learn to implement a monorepo with a single Next.js site that has installed two local packages.
-framework: Next.js
-useCase:
-  - Monorepos
-  - Documentation
-css: Tailwind
-deployUrl: https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/monorepo&project-name=monorepo&repository-name=monorepo&root-directory=apps/app&install-command=pnpm%20install&build-command=cd%20..%2F..%20%26%26%20pnpm%20build%20--filter%3Dapp...&ignore-command=npx%20turbo-ignore
-demoUrl: https://solutions-monorepo.vercel.sh
-relatedTemplates:
-  - monorepo-nx
-  - turborepo-next-basic
-  - turborepo-sveltekit-starter
----
+# bbl-turbo
 
-# Monorepo
+![build](https://github.com/BoBeenLee/bbl-nx/actions/workflows/ci-cd.yml/badge.svg)
+![GitHub deployments](https://img.shields.io/github/deployments/BoBeenLee/bbl-nx/production?label=vercel&logo=vercel&logoColor=white)
+[![CodeFactor](https://www.codefactor.io/repository/github/bobeenlee/bbl-nx/badge)](https://www.codefactor.io/repository/github/bobeenlee/bbl-nx)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+![lastUpdated](https://img.shields.io/github/last-commit/BoBeenLee/bbl-nx/master)
 
-This is a monorepo example with a single Next.js site ([./apps/app](./apps/app)) that has installed two local packages:
+blog & homepage project based on monorepo(nx)
 
-- [./packages/ui](./packages/ui): Exports UI components that use TypeScript and Tailwind CSS and is compiled by SWC.
-- [./packages/utils](./packages/utils): Exports utility functions that use TypeScript.
+- bbl-nextjs
 
-The monorepo is using [Turborepo](https://turborepo.org/) and [pnpm workspaces](https://pnpm.io/workspaces) to link packages together.
+## Links
 
-For more examples on monorepos check out the [official Turborepo examples](https://github.com/vercel/turborepo/tree/main/examples).
+- Homepage
+  - https://bbl-nx.vercel.app/
+- Storybook
+  - Component, Features: https://bobeenlee.github.io/bbl-nx/ui-components/
+  - Pages: https://bobeenlee.github.io/bbl-nx/bbl-nextjs
 
-## Demo
+## Feature
 
-https://solutions-monorepo.vercel.sh
+- **Framework**: Next.js, Remix
+- **Deployment**: Vercel
+- **Styling**: Tailwind CSS
+- **Tooling**: [Storybook](https://github.com/storybooks/storybook)
+- **Build System**: Turbo
 
-## How to Use
+## 📂 Directory Structure
 
-You can choose from one of the following two methods to use this repository:
+    root
+    ├── apps
+    ├──── app
+    ├────── src
+    ├──────── apis
+    ├──────── components   # components with next
+    ├──────── libs
+    ├──────── machines     # integrating machines with an api
+    ├──────── pages        # Pages
+    ├── packages
+    ├──── features         # all of the code for a feature and putting it in one single place (ex) authentication - login, signup, user data...)
+    ├──── apis             #
+    ├──── constants        #
+    ├──── hooks            # shared hooks
+    ├──── images           # image assets
+    ├──── libs             # third-party libraries (ex) fetch, axios, sentry...) - facade pattern을 통한 구현
+    ├──── ui-components    # general small components, presentational components (atoms, molecules, organisms, templates)
+    ├──── utils            # very small and simple functions, generally pure function (ex) uri, browser)
+    ├── posts              # MD posts directory
+    ├── tools
+    ├──── generators       # plop-tempates 저장소
+    └── README.md
 
-### One-Click Deploy
+## Prerequisites
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+- node version 16.13.2
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/monorepo&project-name=monorepo&repository-name=monorepo&root-directory=apps/app&install-command=pnpm%20install&build-command=cd%20..%2F..%20%26%26%20pnpm%20build%20--filter%3Dapp...&ignore-command=npx%20turbo-ignore)
+## Installing / Getting started
 
-### Clone and Deploy
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/monorepo monorepo
+```shell
+pnpm install
+pnpm install --registry=https://registry.npmjs.org/
 ```
 
-Next, run `app` in development mode:
+### Setting up Dev
 
-```bash
-pnpm dev
+```shell
+pnpm start
 ```
 
-The app should be up and running at http://localhost:3000.
+## Tests
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=monorepo-example) ([Documentation](https://nextjs.org/docs/deployment)).
+### Running unit tests
+
+```shell
+pnpm test
+```
+
+## Deployment
+
+- Deploy to Vercel
+  - https://bbl-turbo.vercel.app/
+
+
+### Generate UI-Components
+
+```
+pnpm ui-components:new
+```
+
+## Supported browsers
+
+- [defaults](https://github.com/browserslist/browserslist#full-list): Browserslist’s default browsers (> 0.5%, last 2 versions, Firefox ESR, not dead).
+
+
+## Gitflow
+
+- git flow release start, finish 2.0.16
+- git flow hotfix start, finish 2.0.16-hotfix.0
+
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars0.githubusercontent.com/u/1489321?v=4" width="100px;"/><br /><sub><b>BoBeenLee</b></sub>](https://bbl.netlify.com/)<br />[💬](#question-BoBinLee "Answering Questions") [📝](#blog-BoBinLee "Blogposts") [🐛](https://github.com/BoBinLee/asking-price/issues?q=author%3ABoBinLee "Bug reports") [💻](https://github.com/BoBinLee/asking-price/commits?author=BoBinLee "Code") [🎨](#design-BoBinLee "Design") [📖](https://github.com/BoBinLee/asking-price/commits?author=BoBinLee "Documentation") [📋](#eventOrganizing-BoBinLee "Event Organizing") [💡](#example-BoBinLee "Examples") [💵](#financial-BoBinLee "Financial") [🔍](#fundingFinding-BoBinLee "Funding Finding") [🤔](#ideas-BoBinLee "Ideas, Planning, & Feedback") [🚇](#infra-BoBinLee "Infrastructure (Hosting, Build-Tools, etc)") [📦](#platform-BoBinLee "Packaging/porting to new platform") [🔌](#plugin-BoBinLee "Plugin/utility libraries") [👀](#review-BoBinLee "Reviewed Pull Requests") [📢](#talk-BoBinLee "Talks") [⚠️](https://github.com/BoBinLee/asking-price/commits?author=BoBinLee "Tests") [🔧](#tool-BoBinLee "Tools") [🌍](#translation-BoBinLee "Translation") [✅](#tutorial-BoBinLee "Tutorials") [📹](#video-BoBinLee "Videos") |
+| :---: |
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
