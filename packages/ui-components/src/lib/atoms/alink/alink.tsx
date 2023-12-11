@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
 import { NavRouter, NavRouterKey } from "@bbl-turbo/constants";
 import { makePathname } from "@bbl-turbo/utils";
+import Link from "next/link";
 
 export type ALinkProps<F extends NavRouterKey> = {
   as?: string;
@@ -52,10 +52,12 @@ export function ALink<F extends NavRouterKey>(props: ALinkProps<F>) {
     return newClassName;
   }, [activeClassName, childClassName, href, pathname, props.as]);
 
+  const CustomLink = Link as any
+
   return (
-    <Link {...rest} className={className} href={href as any}>
-      {children}
-    </Link>
+    <CustomLink {...(rest)} className={className} href={href}>
+      {children} 
+    </CustomLink>
   );
 }
 

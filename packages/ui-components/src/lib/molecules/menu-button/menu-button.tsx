@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import { Icon } from '../../atoms/icon/icon';
-// import styles from './menu-button.module.css';
+import styles from './menu-button.module.css';
 
 export interface MenuButtonProps {
   className?: string;
@@ -12,7 +12,7 @@ export function MenuButton(props: MenuButtonProps) {
   const { className, open, onToggleMenu } = props;
   return (
     <button
-      // className={cn(styles['burger'], className)}
+      className={cn(styles['burger'], className)}
       aria-label="Toggle menu"
       type="button"
       onClick={onToggleMenu}

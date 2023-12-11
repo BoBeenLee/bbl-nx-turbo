@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { ALink } from '../../atoms';
 import { nav } from '@bbl-turbo/constants';
 
-// import styles from './mobile-menus.module.css';
+import styles from './mobile-menus.module.css';
 
 export interface MenuItemProps {
   href: NavKey;
@@ -40,9 +40,9 @@ export function MobileMenus(props: MenusProps) {
     <ul
       className={cn(
         className,
-        // styles['menu'],
+        styles['menu'],
         'flex flex-col absolute bg-white dark:bg-gray-900 left-0 visible md:hidden',
-        // open && styles['menuRendered']
+        open && styles['menuRendered']
       )}
     >
       {nav.map((item, index) => {

@@ -9,9 +9,10 @@ export interface AvatarProps {
 
 export function Avatar(props: AvatarProps) {
   const { className, alt } = props;
+  const CustomImage = Image as any
   return (
     <div className={cn(className, 'relative rounded-full overflow-hidden')}>
-      <Image
+      <CustomImage
         alt={alt ?? "avatar"}
         fill={true}
         src={getImages().logoImages.quokkaPng}
