@@ -4,6 +4,7 @@ import { env } from "../src/libs/env";
 import { ThemeProvider } from "./theme-provider";
 import Layout from "../src/components/ui/layout";
 import { metadataItem } from "@bbl-turbo/constants";
+import React from 'react';
 // import { Analytics } from "@vercel/analytics/react";
 
 import "./globals.css";
