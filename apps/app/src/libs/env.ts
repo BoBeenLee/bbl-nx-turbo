@@ -9,7 +9,7 @@ interface EnvironmentEntry {
 }
 
 const ENV_TYPE: keyof Environment = 'production';
-const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ?? '';
+const GTM_ID = (process.env as any).NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ?? '';
 
 export const envByType: Environment = {
   production: {

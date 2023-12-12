@@ -1,17 +1,10 @@
 {
-  "extends": [
-    "plugin:@nx/react-typescript",
-    "../../.eslintrc.json",
-    "next",
-    "next/core-web-vitals"
-  ],
+  "extends": ["../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-      "rules": {
-        "@next/next/no-html-link-for-pages": ["error", "apps/bbl-nextjs/pages"]
-      }
+      "rules": {}
     },
     {
       "files": ["*.ts", "*.tsx"],

@@ -12,7 +12,10 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": "./src/index.ts",
+    "./tailwind": {
+      "require": "./src/tailwind.cjs"
+    }
   },
   "files": [
     "src"

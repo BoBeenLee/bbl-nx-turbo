@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const withImages = require('next-images');
 const withPWA = require('next-pwa')({
   dest: 'public'
@@ -15,7 +14,14 @@ module.exports = (withImages({
       typedRoutes: true,
       legacyBrowsers: false,
     },
-    transpilePackages: ['@bbl-turbo'],
+    transpilePackages: [
+      '@bbl-turbo/apis', 
+      '@bbl-turbo/constants',
+      '@bbl-turbo/features',
+      '@bbl-turbo/libs',
+      '@bbl-turbo/ui-components',
+      '@bbl-turbo/utils'
+    ],
     async headers() {
       return [
         {

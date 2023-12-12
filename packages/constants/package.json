@@ -12,7 +12,7 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": "./src/index.ts"
   },
   "files": [
     "src"

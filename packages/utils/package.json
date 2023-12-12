@@ -14,11 +14,7 @@
   "sideEffects": false,
   "type": "module",
   "exports": {
-    ".": "./dist/index.js",
-    "./*": [
-      "./dist/*.js",
-      "./dist/*/index.js"
-    ]
+    ".": "./src/index.ts"
   },
   "typesVersions": {
     "*": {

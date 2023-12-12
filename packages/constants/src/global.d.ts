@@ -39,19 +39,13 @@ declare global {
   type AsyncFunction = (...args: any[]) => Promise<any>;
 }
 
+declare module "*.css";
+
+declare module "*.module.css";
+
 declare module "*.json" {
   const value: any;
   export default value;
 }
 
-declare module '*.svg' {
-  const content: any;
-  export const ReactComponent: any;
-  export default content;
-}
-
-declare module 'remark' {
-  const content: any;
-  export const ReactComponent: any;
-  export default content;
-}
+export {};

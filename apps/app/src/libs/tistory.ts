@@ -1,4 +1,4 @@
-import { feednamiApi } from "@bbl-turbo/apis";
+import { feednamiApi } from "./feednami";
 
 export interface TistoryItem {
   guid: string;
